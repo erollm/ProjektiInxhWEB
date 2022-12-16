@@ -1,14 +1,26 @@
 *{
     margin:0;
 }
-header{
+header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     height: 80px;
-    background-color: white;
-    box-shadow: 0px 20px 40px 10px #aaa;
-
+    box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
+}
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0,0,0,.8);
+    font-family: Verdana;
+    font-weight: 400;
+    font-size: 13px;
+    color: white;
+    height: 50px;
 }
 #logo{
     display: flex;
@@ -46,4 +58,91 @@ header{
 #navbar a:hover {
     color: black;
     text-decoration: underline wavy;
+}
+#bodylogin{
+    display: flex;
+    justify-content: center;
+}
+#loginbox {
+    background-color: darkred;
+    border-radius: 5px 5px 5px 5px;
+    width: 500px;
+    font-family: "Open Sans", Sans-serif;
+    margin-top: 100px;
+}
+#loginheader {
+    text-align: center;
+    color: white;
+    margin-bottom: 40px;
+    margin-top: 40px;
+}
+#loginInput {
+    display:flex;
+    flex-direction: column;
+}
+.loginInput {
+    display: flex;
+    justify-content: center
+}
+.iconBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    height: 50px;
+    width: 50px;
+    margin-top: 5px;
+    border-radius: 5px 0px 0px 5px;
+}
+.inputBox {
+    margin-top: 5px;
+    height: 50px;
+    width: 250px;
+    border: 0;
+    border-radius: 0px 5px 5px 0px;
+}
+#Loginfooter {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+#loginbutton {
+    width: 300px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px 5px 5px 5px;
+    background-color: white;
+    cursor: pointer;
+    transition-duration: 0.4s;
+}
+#loginbutton:hover {
+    background-color: #333333;
+    color: white;
+}
+#loginExtras{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    margin-bottom: 60px;
+}
+#forgetPassword{
+    text-align: center;
+    margin-right: 30px;
+    color: white;
+    text-decoration: none;
+}
+#forgetPassword:hover {
+    color: black;
+}
+#signupButton {
+    width: 150px;
+    background-color: white;
+    border: 0;
+    border-radius: 5px 5px 5px 5px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+}
+#signupButton:hover {
+    background-color: #333333;
+    color: white;
 }
