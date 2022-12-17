@@ -2,6 +2,8 @@
 <head>
     <title>Emri - Home</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/slider.css">
+    <script src="https://kit.fontawesome.com/2f5261353d.js" crossorigin="anonymous"></script>
     <link href='https://fonts.googleapis.com/css?family=Yellowtail%7cCabin:400,500,600,700,400italic,700italic%7cLibre+Baskerville:400italic%7cGreat+Vibes%7cOswald:400,300,700%7cOpen+Sans:600italic,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
@@ -20,7 +22,34 @@
             </ul>
         </div>
     </header>
-    <img src="images/pizza.jpg" width="1920"/>
+    <div id="slideshow">
+        <div class="slideArrows">
+            <i onclick="slideLeft()" class="fa-solid fa-chevron-left fa-2xl"></i>
+        </div>
+        <div id="slideMiddle">
+            <span>
 
+            </span>
+            <div id="slideInfo">
+                <h1>EMRI PIZZA</h1>
+                <h2>Experience the Best Pizza in the Town</h2>
+                <span id="slideButtons">
+                    <button>Order</button><button>Menu</button>
+                </span>
+            </div>
+            <div id="slideSelector">
+                <i id="select1" class="fa-solid fa-circle fa-lg"></i>
+                <i id="select2" class="fa-regular fa-circle fa-lg"></i>
+                <i id="select3" class="fa-regular fa-circle fa-lg"></i>
+            </div>
+        </div>
+        <div class="slideArrows">
+            <i onclick="slideRight()" class="fa-solid fa-chevron-right fa-2xl"></i>
+        </div>
+    </div>
+    <footer>
+        <p>EROLLI | All rights reserved 2022 ©</p>
+    </footer>
+    <script src="js/sliderjs.js"></script>
 </body>
 </html>
