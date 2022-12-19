@@ -12,8 +12,6 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0;
     width: 100%;
     background-color: rgba(0,0,0,.8);
     font-family: Verdana;
@@ -131,9 +129,9 @@ footer {
     color: white;
     text-decoration: none;
 }
-#forgetPassword:hover {
-    color: black;
-}
+    #forgetPassword:hover {
+        color: black;
+    }
 #signupButton {
     width: 150px;
     background-color: white;
@@ -145,4 +143,283 @@ footer {
 #signupButton:hover {
     background-color: #333333;
     color: white;
+}
+#About {
+    font-family: "Open Sans", Sans-serif;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    text-align: justify;
+    margin-top: 25px;
+}
+
+    #About img {
+        border-radius: 5px 5px 5px 5px;
+    }
+
+#aboutus {
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.aboutusm {
+    margin: 20px 20px;
+}
+
+    .aboutusm h1 {
+        margin: 20px 0px;
+    }
+
+#aboutIcons i {
+    margin-top: 40px;
+    margin-right: 10px;
+    color: darkred;
+    cursor: pointer;
+}
+
+    #aboutIcons i:hover {
+        color: black;
+    }
+
+#bestpizza {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    display: flex;
+}
+
+#bestpizzam {
+    margin-right: 20px;
+}
+
+#pizzaserved {
+    background: url(../images/served.jpg);
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 200px;
+}
+
+.pizzaserved {
+    font-family: "Open Sans", Sans-serif;
+    text-align: center;
+    color: white;
+}
+
+#feedback {
+    padding-top: 40px;
+}
+
+    #feedback h1 {
+        color: darkred;
+        font-size: 35px;
+        font-family: "Lucida Handwriting", Sans-serif;
+        text-align: center;
+    }
+
+#reviews {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 35px;
+    margin-bottom: 50px;
+}
+
+.reviews {
+    width: 30%;
+    background-color: #F7F7F7;
+    padding: 20px;
+}
+
+.reviewheader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: "Open Sans", Sans-serif;
+}
+
+    .reviewheader i {
+        color: #ffe234;
+        margin-right: 4px;
+    }
+
+    .reviewheader h2 {
+        margin-left: 15px;
+    }
+
+.reviewprofile {
+    display: flex;
+    align-items: center;
+}
+
+.pfont {
+    color: black;
+    font-family: "Poppins", Sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    text-align: justify;
+    line-height: 1.7em;
+    letter-spacing: 0.1px;
+}
+#menu {
+    margin: 60px auto;
+    width: 60%;
+}
+
+    #menu h1 {
+        font-family: "Font Awesome 6 Free";
+        letter-spacing: 2px;
+        font-weight: 700;
+    }
+
+    #menu h4 {
+        font-weight: 500;
+    }
+
+.menusection {
+    margin-top: 50px;
+}
+
+#menuheader {
+    text-align: center;
+}
+
+.menuproduct {
+    display: flex;
+    flex-direction: column;
+}
+
+.menupricing {
+    display: flex;
+    align-items: center;
+    margin-top: 25px;
+}
+
+.menuseperator {
+    width: 100%;
+    margin: 0 15px;
+    display: block;
+    border-bottom: 0.5px solid black;
+}
+
+#deliverybody {
+    height: 100%;
+    background-color: #F7F7F7;
+    font-family: "Josefin Sans", Arial, sans-serif;
+}
+
+.productContainer {
+    background-color: white;
+    display: flex;
+    width: 600px;
+    height: 105px;
+    padding: 5px;
+    margin: 16px;
+}
+
+.pimage {
+    display: flex;
+    justify-content: center;
+    width: 100px;
+}
+
+    .pimage img {
+        max-width: 100px;
+        height: 100px;
+    }
+
+.pinfo {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: space-between;
+    margin-left: 5px;
+}
+
+.pinfoH {
+    margin-top: 5px;
+}
+
+.pinfoF {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+    .pinfoF button {
+        height: 25px;
+        width: 90px;
+        font-family: "Poppins", Arial, sans-serif;
+        border: 0;
+        background-color: #fac564;
+        color: white;
+        border-radius: 3px;
+        cursor: pointer;
+    }
+
+        .pinfoF button:hover {
+            background-color: #333333
+        }
+
+.priceP {
+    color: #fac564;
+    font-weight: 600;
+}
+
+#pizzamenu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#deliveryHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+}
+
+#deliveryButtons {
+    margin-top: 15px;
+}
+
+.deliveryButtons {
+    height: 30px;
+    width: 200px;
+    font-family: "Poppins", Arial, sans-serif;
+    border: 0;
+    background-color: #fac564;
+    color: white;
+    cursor: pointer;
+}
+
+#deliveryButtons button:hover {
+    background-color: #333333;
+}
+
+.selectedMenu {
+    height: 30px;
+    width: 200px;
+    font-family: "Poppins", Arial, sans-serif;
+    border: 0;
+    color: white;
+    cursor: pointer;
+    background-color: #333333;
+}
+
+
+#pastaMenu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#drinksMenu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
 }

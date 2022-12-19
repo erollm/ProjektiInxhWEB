@@ -34,10 +34,12 @@
     color: white;
     cursor: pointer;
 }
-#slideButtons button:hover {
-    color: black;
-    border-color: black;
-}
+    #slideButtons button:hover {
+        background-color: white;
+        color: #333333;
+        border-color: white;
+        opacity: 0.9;
+    }
 
 #slideSelector {
     display: flex;
