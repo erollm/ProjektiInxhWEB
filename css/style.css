@@ -134,6 +134,7 @@ footer {
     }
 #signupButton {
     width: 150px;
+    height: 100%;
     background-color: white;
     border: 0;
     border-radius: 5px 5px 5px 5px;
@@ -410,16 +411,110 @@ footer {
     cursor: pointer;
     background-color: #333333;
 }
-
-
 #pastaMenu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
-
 #drinksMenu {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
 }
+
+
+#contactBody {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+#contactus {
+    display: flex;
+    flex-direction: column;
+}
+
+#formandmap {
+    display: flex;
+    background-color: #e8edf0;
+}
+
+#contactform {
+    display: flex;
+    flex-direction: column;
+    padding: 35px 40px;
+}
+
+#contactNameEmail {
+    display: flex;
+    margin-top: 35px;
+}
+
+.contactInput {
+    display: flex;
+    flex-direction: column;
+    margin-right: 35px;
+    margin-bottom: 1rem;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+    .contactInput label {
+        margin-bottom: 10px;
+    }
+
+    .contactInput input {
+        border: 0;
+        height: 2.30em;
+        padding: 0.375rem 0.75rem;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+#contactbutton {
+    color: white;
+    background-color: #2553b8;
+    border-radius: 5px;
+    height: 45px;
+    width: 125px;
+    border: 0;
+    margin-bottom: 35px;
+    cursor: pointer;
+}
+
+    #contactbutton:hover {
+        background-color: #333333;
+    }
+
+#contactIcons {
+    display: flex;
+    justify-content: space-between;
+}
+
+.contactIcons {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+    .contactIcons i {
+        margin-bottom: 10px;
+        color: #2553b8;
+    }
+#registerbutton {
+    width: 300px;
+    height: 50px;
+    border: 0;
+    border-radius: 5px 5px 5px 5px;
+    background-color: white;
+    cursor: pointer;
+    transition-duration: 0.4s;
+    margin-bottom: 60px;
+}
+
+    #registerbutton:hover {
+        background-color: #333333;
+        color: white;
+    }

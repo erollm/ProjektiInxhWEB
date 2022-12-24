@@ -3,6 +3,7 @@
     <title>Emri - Contact</title>
     <link rel="stylesheet" href="css/style.css">
     <link href='https://fonts.googleapis.com/css?family=Yellowtail%7cCabin:400,500,600,700,400italic,700italic%7cLibre+Baskerville:400italic%7cGreat+Vibes%7cOswald:400,300,700%7cOpen+Sans:600italic,700' rel='stylesheet' type='text/css'>
+    <script src="https://kit.fontawesome.com/2f5261353d.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <!-- HEADER -->
@@ -21,7 +22,80 @@
         </div>
     </header>
     <!-- BODY -->
-    <img src="images/pizza.jpg" width="1920" />
+    <div id="contactBody">
+        <div id="contactus">
+            <div id="formandmap">
+                <div id="contactform">
+                    <form>
+                        <h1>Contact Us</h1>
+                        <div id="contactNameEmail">
+                            <div class="contactInput">
+                                <label>FULL NAME</label>
+                                <input type="text" placeholder="Name" />
+                            </div>
+                            <div class="contactInput">
+                                <label>EMAIL ADDRESS</label>
+                                <input type="email" placeholder="Email" />
+                            </div>
+                        </div>
+                        <div class="contactInput">
+                            <label>SUBJECT</label>
+                            <input type="text" placeholder="Subject" />
+                        </div>
+                        <div class="contactInput">
+                            <label>MESSAGE</label>
+                            <input type="text" placeholder="Message" style="height:100px;" />
+                        </div>
+                        <button id="contactbutton">Send Message</button>
+                    </form>
+                </div>
+
+                <div class="mapouter">
+                    <div class="gmap_canvas">
+                        <iframe width="400" height="515" id="gmap_canvas" src="https://maps.google.com/maps?q=J5W3+V69,%20Prishtina%2010000&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://123movies-to.org"></a><br>
+                        <style>
+                            .mapouter {
+                                position: relative;
+                                text-align: right;
+                                height: 515px;
+                                width: 400px;
+                            }
+                        </style><a href="https://www.embedgooglemap.net">google iframe map</a>
+                        <style>
+                            .gmap_canvas {
+                                overflow: hidden;
+                                background: none !important;
+                                height: 515px;
+                                width: 400px;
+                            }
+                        </style>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contactIcons">
+                <div class="contactIcons">
+                    <i class="fa-solid fa-compass fa-3x"></i>
+                    <p>Lagjja Kalabria</p>
+                    <p>10000 Prishtine, Kosovo</p>
+                </div>
+                <div class="contactIcons">
+                    <i class="fa-solid fa-square-phone fa-3x"></i>
+                    <p>Phone: +383 38 541 400</p>
+                </div>
+                <div class="contactIcons">
+                    <i class="fa-solid fa-envelope fa-3x"></i>
+                    <p>Email: info@ubt-uni.net</p>
+                </div>
+                <div class="contactIcons">
+                    <i class="fa-solid fa-globe fa-3x"> </i>
+                    <p>Website: ubt-uni.net</p>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
     <footer>
         <p>EROLLI | All rights reserved 2022 ©</p>
     </footer>
