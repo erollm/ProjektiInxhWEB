@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function (event) {
     const registerButton = document.getElementById("registerbutton");
     const loginButton = document.getElementById("loginbutton");
+    const contactButton = document.getElementById("contactbutton");
+
     const Registervalidate = (event) => {
         event.preventDefault();
         const username = document.getElementById("username");
@@ -90,11 +92,55 @@ document.addEventListener("DOMContentLoaded", function (event) {
         return true;
     }
 
-    if (loginButton != null) { 
-        loginButton.addEventListener("click", Loginvalidate);
+    const Contactvalidate = (event) => {
+        event.preventDefault();
+        const fullname = document.getElementById("fullname");
+        const email = document.getElementById("email");
+        const subject = document.getElementById("subject");
+        const message = document.getElementById("message");
+        const errormessage = document.getElementById("errormessage");
+        const emailValid = (email) => {
+            const emailRegex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,4}))$/;
+            return emailRegex.test(email.toLowerCase());
+        }
+
+        if (fullname.value == "") {
+            errormessage.innerHTML = "Name cannot be empty";
+            fullname.focus();
+            return false;
+        }
+        if (email.value == "") {
+            errormessage.innerHTML = "Email cannot be empty";
+            email.focus();
+            return false;
+        }
+        if (!emailValid(email.value)) {
+            errormessage.innerHTML = "Email is not valid";
+            email.focus();
+            return false;
+        }
+        if (subject.value == "") {
+            errormessage.innerHTML = "Subject cannot be empty";
+            subject.focus();
+            return false;
+        }
+        if (message.value == "") {
+            errormessage.innerHTML = "Message cannot be empty";
+            message.focus();
+            return false;
+        }
+        return true;
     }
+
     if (registerButton != null) {
         registerButton.addEventListener("click", Registervalidate);
     }
+    if (loginButton != null) {
+        loginButton.addEventListener("click", Loginvalidate);
+    }
+    if (contactButton != null) {
+        contactButton.addEventListener("click", Contactvalidate);
+    }
+
 })
 

@@ -28,23 +28,24 @@
                 <div id="contactform">
                     <form>
                         <h1>Contact Us</h1>
+                        <h4 id="errormessage"></h4>
                         <div id="contactNameEmail">
                             <div class="contactInput">
                                 <label>FULL NAME</label>
-                                <input type="text" placeholder="Name" />
+                                <input id="fullname" type="text" placeholder="Name" />
                             </div>
                             <div class="contactInput">
                                 <label>EMAIL ADDRESS</label>
-                                <input type="email" placeholder="Email" />
+                                <input id="email" type="email" placeholder="Email" />
                             </div>
                         </div>
                         <div class="contactInput">
                             <label>SUBJECT</label>
-                            <input type="text" placeholder="Subject" />
+                            <input id="subject" type="text" placeholder="Subject" />
                         </div>
                         <div class="contactInput">
                             <label>MESSAGE</label>
-                            <input type="text" placeholder="Message" style="height:100px;" />
+                            <input id="message" type="text" placeholder="Message" style="height:100px;" />
                         </div>
                         <button id="contactbutton">Send Message</button>
                     </form>
@@ -96,6 +97,7 @@
         </div>
 
     </div>
+    <script src="js/validimi.js"></script>
     <footer>
         <p>EROLLI | All rights reserved 2022 ©</p>
     </footer>
