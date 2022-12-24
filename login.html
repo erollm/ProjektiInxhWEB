@@ -27,6 +27,7 @@
             <div id="loginheader">
                 <h1>Log In</h1>
                 <p>Login or create a new account</p>
+                <h4 id="errormesage"></h4>
             </div>
             <form>
                 <div id="loginInput">
@@ -34,16 +35,16 @@
                         <span class="iconBox">
                             <i class="fa-solid fa-circle-user"></i>
                         </span>
-                        <input class="inputBox" type="text" placeholder="Username" />
+                        <input class="inputBox" type="text" id="username" placeholder="Username" />
                     </div>
                     <div class="loginInput">
                         <span class="iconBox">
                             <i class="fa-solid fa-lock"></i>
                         </span>
-                        <input class="inputBox" type="password" placeholder="Password" />
+                        <input class="inputBox" type="password" id="password" placeholder="Password" />
                     </div>
                     <div id="Loginfooter">
-                        <button id="loginbutton">Log In</button>
+                        <input type="submit" id="loginbutton" value="Log In"/>
                     </div>
                 </div>
             </form>
@@ -53,6 +54,7 @@
             </div>
         </div>
     </div>
+    <script src="js/validimi.js"></script>
     <!-- FOOTER -->
     <footer>
         <p>EROLLI | All rights reserved 2022 ©</p>
