@@ -4,6 +4,7 @@
     height: 500px;
     justify-content: space-between;
     transition-duration: 1s;
+    width: 100%;
 }
 
 #slideMiddle {
@@ -70,3 +71,15 @@
         .slideArrows i:hover {
             color: black;
         }
+
+@media screen and (max-width: 845px) {
+    #slideshow {
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 250px;
+    }
+    #slideInfo, #slideSelector {
+        display: none;
+    }
+}

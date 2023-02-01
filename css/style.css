@@ -1,9 +1,10 @@
-*{
-    margin:0;
+* {
+    margin: 0;
 }
 header {
     display: flex;
     flex-direction: row;
+    background-color: white;
     justify-content: space-between;
     height: 80px;
     box-shadow: 0 3px 5px rgba(57, 63, 72, 0.3);
@@ -527,3 +528,149 @@ footer {
         background-color: #333333;
         color: white;
     }
+#mobilebar{
+    display: none;
+}
+#showMenu {
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 28px;
+    height: 28px;
+    background-color: darkred;
+}
+#showMenu a {
+    color: white;
+}
+#mobilenavbar {
+    display: none;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+    position: fixed;
+    margin-top: 79px;
+}
+.mobileli {
+    padding: 10px;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
+    background-color: darkred;
+    width: 100%;
+    cursor: pointer;
+    font-family: "Open Sans", Sans-serif;
+}
+.mAnchor {
+    color: white;
+    text-decoration: none;
+    width: 100%;
+}
+.mobileli:active{
+    background-color: #333333;
+}
+#mobilebar a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 845px) {
+#navbar{
+    display: none;
+}
+#logo{
+    margin-left: 15px;
+}
+#mobilebar {
+    display: flex;
+    align-items: center;
+    margin-right: 15px;
+    }
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 999;
+        margin-top: -1px;
+    }
+    #menu {
+        width: 95%;
+        margin: 30px auto;
+    }
+    #deliveryButtons{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #loginbox {
+        margin-top: 30px;
+    }
+    #contactBody{
+        margin-top: 5px;
+    }
+    .mapouter{
+        display: none;
+    }
+    #contactform{
+        width: 100%;
+        padding: 10px;
+    }
+    #contactus{
+        width: 100%;
+    }
+    #contactNameEmail{
+        flex-direction: column;
+    }
+    .contactIcons i{
+        font-size: 22px;
+    }
+    .contactIcons{
+        margin-top: 10px;
+        font-size: 12px;
+    }
+    .mobile0{
+        display: none;
+    }
+    #About {
+        margin-top: 5px;
+    }
+    #aboutus {
+        width: 95%;
+        align-items: flex-start;
+    }
+    #About img{
+        margin-top: 25px;
+        height: 200px;
+    }
+    #About h1{
+        font-size: 20px;
+    }
+    #About h2{
+        font-size: 16px;
+    }
+    .aboutusm{
+        margin: 0 5px;
+    }
+    #bestpizza{
+        width: 95%;
+    }
+    #bestpizza img{
+        height: 150px;
+    }
+    #pizzaserved h1{
+        font-size: 22px;
+    }
+    #pizzaserved h3{
+        font-size: 15px;
+    }
+    #pizzaserved {
+        background-size: auto 100%;
+        background-repeat: no-repeat;
+        background-position: center;
+        height: 150px;
+    }
+    #reviews{
+        flex-direction: column;
+    }
+    .reviews{
+        margin-top: 10px;
+        width: 90%;
+    }
+}

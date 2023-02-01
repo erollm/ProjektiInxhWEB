@@ -4,6 +4,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Yellowtail%7cCabin:400,500,600,700,400italic,700italic%7cLibre+Baskerville:400italic%7cGreat+Vibes%7cOswald:400,300,700%7cOpen+Sans:600italic,700" rel="stylesheet" type="text/css">
     <script src="https://kit.fontawesome.com/2f5261353d.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
     <!-- HEADER -->
@@ -20,6 +21,25 @@
                 <li><a href="contact.html">CONTACT</a></li>
             </ul>
         </div>
+        <div id="mobilebar">
+            <a href="javascript:void(0);" onclick="showMenu()">
+                <div id="showMenu">
+                    <i id="mobileicon" class="fa-solid fa-bars" color></i>
+                </div>
+            </a>
+        </div>
+        <ul id="mobilenavbar">
+            <a class="mAnchor" href="index.html">
+            <li class="mobileli">HOME</li></a>
+            <a class="mAnchor" href="specialties.html">
+            <li class="mobileli">SPECIALTIES</li></a>
+            <a class="mAnchor" href="order.html">
+            <li class="mobileli">ORDER</li></a>
+            <a class="mAnchor" href="login.html">
+            <li class="mobileli">LOG IN</li></a>
+            <a class="mAnchor" href="contact.html">
+            <li class="mobileli">CONTACT</li></a>
+        </ul>
     </header>
     <!-- BODY -->
     <div id="bodylogin">
@@ -44,7 +64,7 @@
                         <input class="inputBox" type="password" id="password" placeholder="Password" />
                     </div>
                     <div id="Loginfooter">
-                        <input type="submit" id="loginbutton" value="Log In"/>
+                        <input type="submit" id="loginbutton" value="Log In" />
                     </div>
                 </div>
             </form>
@@ -54,7 +74,9 @@
             </div>
         </div>
     </div>
+    </main>
     <script src="js/validimi.js"></script>
+    <script src="js/JS.js"></script>
     <!-- FOOTER -->
     <footer>
         <p>ROSSETI PIZZA | All rights reserved 2022 ©</p>

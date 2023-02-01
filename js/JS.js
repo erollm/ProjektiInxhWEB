@@ -33,3 +33,16 @@ function showDrinksMenu() {
     selectDisplay(drinksMenu);
     selectButton(drinksbutt)
 }
+
+const mobileIcon = document.getElementById("mobileicon");
+const mobileMenu = document.getElementById("mobilenavbar");
+function showMenu() {
+    if (mobileMenu.style.display == "none") {
+        mobileMenu.style.display = "block";
+        mobileIcon.classList.replace("fa-bars", "fa-xmark");
+    }
+    else {
+        mobileMenu.style.display = "none";
+        mobileIcon.classList.replace("fa-xmark", "fa-bars");
+    }
+}

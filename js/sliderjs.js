@@ -73,4 +73,3 @@ function slideSelect(sel) {
     }
 
 }
-
