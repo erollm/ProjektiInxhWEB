@@ -1,3 +1,29 @@
+<?php
+session_start();
+?>
+<?php
+include_once ('classes/userModel.php');
+$existsError = "";
+if(isset($_POST['registerS'])){
+    $username = $_POST['username'];
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $newUser = new User();
+    $newUser->setUsername($username);
+    $newUser->setEmail($email);
+    $newUser->setPassword($password);
+
+    if($newUser->userExists()['result']){
+       $existsError = $newUser->userExists()['message'];
+    }
+    else{
+        $newUser->addUser();
+        $existsError = "Registration completed successfully";
+        header('Refresh:2; url=index.php');
+    }
+}
+?>
+
 <html>
 <head>
     <title>ROSSETI - Register</title>
@@ -9,64 +35,34 @@
 <body>
     <!-- HEADER -->
     <header>
-        <div id="logo">
-            <h2>ROSSETI</h2>
-        </div>
-        <div id="navbar">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="specialties.html">SPECIALTIES</a></li>
-                <li><a href="order.html">ORDER</a></li>
-                <li id="selectednav"><a href="login.html">LOG IN</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </div>
-        <div id="mobilebar">
-            <a href="javascript:void(0);" onclick="showMenu()">
-                <div id="showMenu">
-                    <i id="mobileicon" class="fa-solid fa-bars" color></i>
-                </div>
-            </a>
-        </div>
-        <ul id="mobilenavbar">
-            <a class="mAnchor" href="index.html">
-            <li class="mobileli">HOME</li></a>
-            <a class="mAnchor" href="specialties.html">
-            <li class="mobileli">SPECIALTIES</li></a>
-            <a class="mAnchor" href="order.html">
-            <li class="mobileli">ORDER</li></a>
-            <a class="mAnchor" href="login.html">
-            <li class="mobileli">LOG IN</li></a>
-            <a class="mAnchor" href="contact.html">
-            <li class="mobileli">CONTACT</li></a>
-        </ul>
+        <?php include_once('inc/header.php') ?>
     </header>
     <!-- BODY -->
     <div id="bodylogin">
         <div id="loginbox">
             <div id="loginheader">
                 <h1>Register</h1>
-                <h4 id="errormesage"></h4>
+                <h4 id="errormesage"><?php echo $existsError ?></h4>
             </div>
-            <form>
+            <form method="post">
                 <div id="loginInput">
                     <div class="loginInput">
                         <span class="iconBox">
                             <i class="fa-solid fa-circle-user"></i>
                         </span>
-                        <input class="inputBox" id="username" type="text" placeholder="Username" />
+                        <input class="inputBox" id="username" type="text" placeholder="Username" name="username"/>
                     </div>
                     <div class="loginInput">
                         <span class="iconBox">
                             <i class="fa-solid fa-envelope"></i>
                         </span>
-                        <input class="inputBox" id="email" type="email" placeholder="Email" />
+                        <input class="inputBox" id="email" type="email" placeholder="Email" name="email"/>
                     </div>
                     <div class="loginInput">
                         <span class="iconBox">
                             <i class="fa-solid fa-lock"></i>
                         </span>
-                        <input class="inputBox" id="password" type="password" placeholder="Password" />
+                        <input class="inputBox" id="password" type="password" placeholder="Password" name="password"/>
                     </div>
                     <div class="loginInput">
                         <span class="iconBox">
@@ -76,7 +72,7 @@
                     </div>
 
                     <div id="Loginfooter">
-                        <button id="registerbutton">Register</button>
+                        <button id="registerbutton" type="submit" name="registerS">Register</button>
                     </div>
                 </div>
             </form>

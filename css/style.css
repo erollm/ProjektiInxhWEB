@@ -572,7 +572,7 @@ footer {
     text-decoration: none;
 }
 
-@media screen and (max-width: 845px) {
+@media screen and (max-width: 481px) {
 #navbar{
     display: none;
 }

@@ -1,3 +1,22 @@
+<?php
+session_start();
+include_once ('classes/userModel.php');
+if (isset($_POST['loginS'])){
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $user = new User();
+    $user->setUsername($username);
+    $user->setPassword($password);
+    if($user->validLogin()['result']){
+       $_SESSION['username'] = $_POST['username'];  
+       $_SESSION['role'] = $user->validLogin()['role']; 
+    }
+}
+echo $_SESSION['username'];
+
+?>
+
 <html>
 <head>
     <title>ROSSETI - Log In</title>
@@ -7,39 +26,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
+
     <!-- HEADER -->
     <header>
-        <div id="logo">
-            <h2>ROSSETI</h2>
-        </div>
-        <div id="navbar">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="specialties.html">SPECIALTIES</a></li>
-                <li><a href="order.html">ORDER</a></li>
-                <li id="selectednav"><a href="login.html">LOG IN</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </div>
-        <div id="mobilebar">
-            <a href="javascript:void(0);" onclick="showMenu()">
-                <div id="showMenu">
-                    <i id="mobileicon" class="fa-solid fa-bars" color></i>
-                </div>
-            </a>
-        </div>
-        <ul id="mobilenavbar">
-            <a class="mAnchor" href="index.html">
-            <li class="mobileli">HOME</li></a>
-            <a class="mAnchor" href="specialties.html">
-            <li class="mobileli">SPECIALTIES</li></a>
-            <a class="mAnchor" href="order.html">
-            <li class="mobileli">ORDER</li></a>
-            <a class="mAnchor" href="login.html">
-            <li class="mobileli">LOG IN</li></a>
-            <a class="mAnchor" href="contact.html">
-            <li class="mobileli">CONTACT</li></a>
-        </ul>
+        <?php include_once('inc/header.php') ?>
     </header>
     <!-- BODY -->
     <div id="bodylogin">
@@ -49,28 +39,26 @@
                 <p>Login or create a new account</p>
                 <h4 id="errormesage"></h4>
             </div>
-            <form>
-                <div id="loginInput">
+            <form method="POST" id="loginInput">
                     <div class="loginInput">
                         <span class="iconBox">
                             <i class="fa-solid fa-circle-user"></i>
                         </span>
-                        <input class="inputBox" type="text" id="username" placeholder="Username" />
+                        <input class="inputBox" type="text" id="username" placeholder="Username" name="username"/>
                     </div>
                     <div class="loginInput">
                         <span class="iconBox">
                             <i class="fa-solid fa-lock"></i>
                         </span>
-                        <input class="inputBox" type="password" id="password" placeholder="Password" />
+                        <input class="inputBox" type="password" id="password" placeholder="Password" name="password"/>
                     </div>
                     <div id="Loginfooter">
-                        <input type="submit" id="loginbutton" value="Log In" />
+                        <input type="submit" id="loginbutton" value="Log In" name="loginS"/>
                     </div>
-                </div>
             </form>
             <div id="loginExtras">
                 <a id="forgetPassword" href="forgetPassword.html">Forget <br /> Password</a>
-                <a href="register.html"><button id="signupButton">Register</button></a>
+                <a href="register.php"><button id="signupButton">Register</button></a>
             </div>
         </div>
     </div>

@@ -4,7 +4,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     const contactButton = document.getElementById("contactbutton");
 
     const Registervalidate = (event) => {
-        event.preventDefault();
         const username = document.getElementById("username");
         const email = document.getElementById("email");
         const password = document.getElementById("password");
@@ -21,36 +20,43 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
 
         if (username.value == "") {
+            event.preventDefault();
             message.innerHTML = "Username cannot be empty";
             username.focus();
             return false;
         }
         if (username.value.length > 20) {
+            event.preventDefault();
             message.innerHTML = "Username cannot be more then 20 characters";
             username.focus();
             return false;
         }
         if (email.value == "") {
+            event.preventDefault();
             message.innerHTML = "Email cannot be empty";
             email.focus();
             return false;
         }
         if (!emailValid(email.value)) {
+            event.preventDefault();
             message.innerHTML = "Email is not valid";
             email.focus();
             return false;
         }
         if (password.value == "" || retypepassword.value == "") {
+            event.preventDefault();
             message.innerHTML = "Password cannot be empty";
             password.focus();
             return false;
         }
         if (password.value != retypepassword.value) {
+            event.preventDefault();
             message.innerHTML = "Passwords do not match";
             password.focus();
             return false;
         }
         if (!passwordValid(password.value)) {
+            event.preventDefault();
             message.innerHTML = "Password must have at least one letter and one number and minimum eight characters.";
             password.focus();
             return false;
@@ -59,7 +65,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     const Loginvalidate = (event) => {
-        event.preventDefault();
         const username = document.getElementById("username");
         const password = document.getElementById("password");
         const message = document.getElementById("errormesage");
@@ -70,21 +75,25 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
 
         if (username.value == "") {
+            event.preventDefault();
             message.innerHTML = "Username cannot be empty";
             username.focus();
             return false;
         }
         if (username.value.length > 20) {
+            event.preventDefault();
             message.innerHTML = "Username cannot be more then 20 characters";
             username.focus();
             return false;
         }
         if (password.value == "") {
+            event.preventDefault();
             message.innerHTML = "Password cannot be empty";
             password.focus();
             return false;
         }
         if (!passwordValid(password.value)) {
+            event.preventDefault();
             message.innerHTML = "Password must have at least one letter and one number and minimum eight characters.";
             password.focus();
             return false;
@@ -93,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
     }
 
     const Contactvalidate = (event) => {
-        event.preventDefault();
+        
         const fullname = document.getElementById("fullname");
         const email = document.getElementById("email");
         const subject = document.getElementById("subject");
@@ -105,26 +114,31 @@ document.addEventListener("DOMContentLoaded", function (event) {
         }
 
         if (fullname.value == "") {
+            event.preventDefault();
             errormessage.innerHTML = "Name cannot be empty";
             fullname.focus();
             return false;
         }
         if (email.value == "") {
+            event.preventDefault();
             errormessage.innerHTML = "Email cannot be empty";
             email.focus();
             return false;
         }
         if (!emailValid(email.value)) {
+            event.preventDefault();
             errormessage.innerHTML = "Email is not valid";
             email.focus();
             return false;
         }
         if (subject.value == "") {
+            event.preventDefault();
             errormessage.innerHTML = "Subject cannot be empty";
             subject.focus();
             return false;
         }
         if (message.value == "") {
+            event.preventDefault();
             errormessage.innerHTML = "Message cannot be empty";
             message.focus();
             return false;

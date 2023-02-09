@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <html>
 <head>
     <title>ROSSETI - Home</title>
@@ -10,37 +13,7 @@
 <body>
     <!-- HEADER -->
     <header>
-        <div id="logo">
-            <h2>ROSSETI</h2>
-        </div>
-        <div id="navbar">
-            <ul>
-                <li id="selectednav"><a href="index.html">HOME</a></li>
-                <li><a href="specialties.html">SPECIALTIES</a></li>
-                <li><a href="order.html">ORDER</a></li>
-                <li><a href="login.html">LOG IN</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </div>
-        <div id="mobilebar">
-            <a href="javascript:void(0);" onclick="showMenu()">
-                <div id="showMenu">
-                    <i id="mobileicon" class="fa-solid fa-bars" color></i>
-                </div>
-            </a>
-        </div>
-        <ul id="mobilenavbar">
-            <a class="mAnchor" href="index.html">
-            <li class="mobileli">HOME</li></a>
-            <a class="mAnchor" href="specialties.html">
-            <li class="mobileli">SPECIALTIES</li></a>
-            <a class="mAnchor" href="order.html">
-            <li class="mobileli">ORDER</li></a>
-            <a class="mAnchor" href="login.html">
-            <li class="mobileli">LOG IN</li></a>
-            <a class="mAnchor" href="contact.html">
-            <li class="mobileli">CONTACT</li></a>
-        </ul>
+        <?php include_once('inc/header.php') ?>
     </header>
     <!-- BODY -->
         <div id="slideshow">

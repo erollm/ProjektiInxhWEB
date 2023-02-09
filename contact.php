@@ -1,3 +1,16 @@
+<?php
+session_start();
+include_once ('classes/messageModel.php');
+if (isset($_POST['sendmessage'])){
+    $fullname = $_POST['fullname'];
+    $email = $_POST['email'];
+    $subject = $_POST['subject'];
+    $message = $_POST['message'];
+
+    $newMessage = new Message($fullname, $email, $subject, $message);
+    $newMessage->sendMessage();
+}
+?>
 <html>
 <head>
     <title>ROSSETI - Contact</title>
@@ -9,65 +22,35 @@
 <body>
     <!-- HEADER -->
     <header>
-        <div id="logo">
-            <h2>ROSSETI</h2>
-        </div>
-        <div id="navbar">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="specialties.html">SPECIALTIES</a></li>
-                <li><a href="order.html">ORDER</a></li>
-                <li><a href="login.html">LOG IN</a></li>
-                <li id="selectednav"><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </div>
-        <div id="mobilebar">
-            <a href="javascript:void(0);" onclick="showMenu()">
-                <div id="showMenu">
-                    <i id="mobileicon" class="fa-solid fa-bars" color></i>
-                </div>
-            </a>
-        </div>
-        <ul id="mobilenavbar">
-            <a class="mAnchor" href="index.html">
-            <li class="mobileli">HOME</li></a>
-            <a class="mAnchor" href="specialties.html">
-            <li class="mobileli">SPECIALTIES</li></a>
-            <a class="mAnchor" href="order.html">
-            <li class="mobileli">ORDER</li></a>
-            <a class="mAnchor" href="login.html">
-            <li class="mobileli">LOG IN</li></a>
-            <a class="mAnchor" href="contact.html">
-            <li class="mobileli">CONTACT</li></a>
-        </ul>
+       <?php include_once('inc/header.php') ?>
     </header>
     <!-- BODY -->
     <div id="contactBody">
         <div id="contactus">
             <div id="formandmap">
                 <div id="contactform">
-                    <form>
+                    <form method="post">
                         <h1>Contact Us</h1>
                         <h4 id="errormessage"></h4>
                         <div id="contactNameEmail">
                             <div class="contactInput">
                                 <label>FULL NAME</label>
-                                <input id="fullname" type="text" placeholder="Name" />
+                                <input id="fullname" type="text" placeholder="Name" name="fullname"/>
                             </div>
                             <div class="contactInput">
                                 <label>EMAIL ADDRESS</label>
-                                <input id="email" type="email" placeholder="Email" />
+                                <input id="email" type="email" placeholder="Email" name="email"/>
                             </div>
                         </div>
                         <div class="contactInput">
                             <label>SUBJECT</label>
-                            <input id="subject" type="text" placeholder="Subject" />
+                            <input id="subject" type="text" placeholder="Subject" name="subject"/>
                         </div>
                         <div class="contactInput">
                             <label>MESSAGE</label>
-                            <textarea id="message" type="text" placeholder="Message" style="height:100px;"></textarea>
+                            <textarea id="message" type="text" placeholder="Message" style="height:100px;" name="message"></textarea>
                         </div>
-                        <button id="contactbutton">Send Message</button>
+                        <button id="contactbutton" type="submit" name="sendmessage">Send Message</button>
                     </form>
                 </div>
 
