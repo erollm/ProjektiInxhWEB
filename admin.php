@@ -1,6 +1,14 @@
 <?php
 session_start();
-if(isset($_SESSION['username']) && $_SESSION['role'] == "admin"){ ?>
+if(isset($_SESSION['username']) && $_SESSION['role'] == "admin"){ 
+    include_once ('classes/userModel.php');
+    include_once ('classes/messageModel.php');
+    include_once ('classes/productModel.php');
+    $user = new User();
+    $message = new Message();
+    $product = new Product();
+?>
+
 <html>
 <head>
 <title>Admin Panel</title>
@@ -27,6 +35,7 @@ if(isset($_SESSION['username']) && $_SESSION['role'] == "admin"){ ?>
        </ul>
       </div>
       <div id="mainpanel">
+        <div class="mainbody">
         <?php 
           if(isset($_GET['page'])){
               switch ($_GET['page']){
@@ -48,6 +57,7 @@ if(isset($_SESSION['username']) && $_SESSION['role'] == "admin"){ ?>
               }
           }
         ?>
+        </div>
       </div>
     </div>
 </body>

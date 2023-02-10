@@ -7,6 +7,7 @@ class User extends dbCon {
 	private $email;
 	private $password;
 	private $role;
+	private $registrationdate;
 	protected $dbCon;
 
 	public function __construct($user='', $email='', $pass=''){
@@ -17,6 +18,9 @@ class User extends dbCon {
 		$this->dbCon=$this->connectDB();
 	}
 
+	public function getId(){
+		return $this->id;
+	}
 
     public function getUsername(){
 		return $this->username;
@@ -39,6 +43,9 @@ class User extends dbCon {
 		$this->password = $password;
 	}
 
+	public function getRegistrationDate(){
+		return $this->registrationdate;
+	}
 
 	public function setRole($role){
 		$this->role = $role;
@@ -79,17 +86,78 @@ class User extends dbCon {
 
 	public function addUser(){
 		if(!($this->userExists()['result']) && $this->valid()){
-		$sql = "INSERT INTO users(username, email, password, role) VALUES(?,?,?,?)";
+		$sql = "INSERT INTO users(username, email, password, role, registrationdate) VALUES(?,?,?,?,?)";
 		try{
 			$stm = $this->dbCon->prepare($sql);
-			$stm->execute([$this->username, $this->email, $this->password, $this->role]);
+			$stm->execute([$this->username, $this->email, $this->password, $this->role, date(DATE_RFC2822)]);
 		}
 		catch(PDOExecption $e){
 			echo $e;
 		}
 		}
 	}
+
+	public function getAllUsers(){
+	    $sql = "SELECT * FROM users WHERE role = 'User'";
+		try{
+			$stm = $this->dbCon->prepare($sql);
+			$stm->execute();
+			return $stm->fetchAll();
+		}
+		catch(PDOExecption $e){
+			echo $e;
+		}
+	}
+
+	public function deleteUser($id){
+	    $sql = "DELETE FROM users WHERE id=?";
+		try{
+			$stm = $this->dbCon->prepare($sql);
+			$stm->execute([$id]);
+		}
+		catch(PDOExecption $e){
+			echo $e;
+		}
+	}
+
+	public function updateUser(){
+		$sql = "UPDATE users SET username = :user, email = :email WHERE id = :id";
+		try{
+			$stm = $this->dbCon->prepare($sql);
+			$stm->execute([':user'=>$this->username, ':email'=>$this->email, ':id'=>$this->id]);
+		}
+		catch(PDOExecption $e){
+			echo $e;
+		}
+	}
+
+	public function selectUser($id){
+		$sql = "SELECT * FROM users WHERE id=?";
+		try{
+			$stm = $this->dbCon->prepare($sql);
+			$stm->execute([$id]);
+			$result = $stm->fetchObject();
+			$this->id = $result->id;
+			$this->username = $result->username;
+			$this->email = $result->email;
+			$this->registrationdate = $result->registrationdate;
+		}
+		catch(PDOExecption $e){
+			echo $e;
+		}
+	}
 	
+	public function getTotalofusers(){
+		$sql = "SELECT * FROM users";
+		try{
+			$stm = $this->dbCon->prepare($sql);
+			$stm->execute();
+			return $stm->rowCount()-1;
+		}
+		catch(PDOExecption $e){
+			echo $e;
+		}
+	}
 
 }
 

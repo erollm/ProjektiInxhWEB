@@ -1,3 +1,9 @@
+* {
+    box-sizing: border-box;
+}
+a{
+    text-decoration: none;
+}
 #panelcontainer {
     display: flex;
     height: calc(100% - 82px);
@@ -32,12 +38,118 @@
     font-size: 22px;
 }
 #mainpanel {
+    display: flex;
+    width: 95%;
+    justify-content: center;
     border-top: 1px solid #A9A9A9;
     font-family: "Open Sans", Sans-serif;
-    height: 100%;
-    width: 95%;
-    padding: 5px;
+    padding: 40px;
 }
 ul{
     list-style: none;
+}
+.mainbody{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 95%;
+}
+#viewtable {
+    margin-top: 30px;
+    width: 100%;
+    border-collapse: collapse;
+}
+    #viewtable td, #viewtable th {
+        text-align:center;
+    }
+    #viewtable tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    #viewtable tr:hover {
+        background-color: #ddd;
+    }
+    #viewtable th {
+        background-color: #282828;
+        color: white;
+    }
+.actionsC{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.crudB{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1px 2px;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.crudB:hover{
+    border: 1px solid white;
+}
+.deleteB {
+    color: black;
+    background-color: #A52A2A;
+}
+.editB {
+    color: black;
+    background-color: orange;
+}
+.addB {
+    margin-top: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #4682B4;
+    width: 200px;
+    height: 35px;
+}
+#editform{
+    border: 2px solid black;
+    padding: 20px;
+    margin-top: 25px;
+    width: 500px;
+}
+.formI{
+    margin-bottom: 10px;
+    height: 25px;
+    width: 100%;
+}
+#formbuttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.formB{
+    cursor: pointer;
+    background-color: orange;
+    border: 0;
+    border-radius: 5px;
+    height: 30px;
+    width: 150px;
+}
+    .formB:first-child {
+        background-color: #A9A9A9;
+    }
+    .formB:hover {
+        border: 2px solid black;
+    }
+#dashboard {
+    display: flex;
+    flex-wrap: wrap;
+}
+.statscontainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 100px;
+    margin: 5px;
+    background-color: #A9A9A9;
+    color: white;
+    border-radius: 5px;
 }

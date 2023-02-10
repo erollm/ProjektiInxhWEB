@@ -1,5 +1,8 @@
 <?php
 session_start();
+include_once ('classes/productModel.php');
+$product = new Product();
+$products = $product->getAllProducts();
 ?>
 <html>
 <head>
@@ -26,343 +29,72 @@ session_start();
             </div>
         </div>
         <div id="pizzaMenu">
+        <?php
+        for($i = 0;$i<count($products);$i++){
+            if($products[$i]['type'] == 'pizza'){?>
             <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/pepperoni.png" />
-                </div>
+                    <img class="pimage" src="<?=$products[$i]['image']?>" />
                 <div class="pinfo">
                     <div class="pinfoH">
-                        <h2>Peperoni Pizza</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
+                        <h2><?=$products[$i]['name']?></h2>
+                        <h4><?=$products[$i]['description']?></h4>
                     </div>
                     <div class="pinfoF">
-                        <p class="priceP">7$</p>
+                        <p class="priceP"><?=$products[$i]['price']?>$</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
             </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/tomato.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Tomato Pizza</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/margharita.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Margharita Pizza</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/mushrooms.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Mushrooms Pizza</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/tuna.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Tuna Pizza</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/vegetarian.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Vegetarian Pizza</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/mozzaralla.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Mozzaerlla Pizza</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/mozzaralla.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Mozzaerlla Pizza</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
+            <?php
+            }
+        }
+        ?>
         </div>
 
         <div id="pastaMenu" style="display: none;">
+        <?php
+        for($i = 0;$i<count($products);$i++){
+            if($products[$i]['type'] == 'pasta'){?>
             <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/bolognese.png" />
-                </div>
+                    <img class="pimage" src="<?=$products[$i]['image']?>" />
                 <div class="pinfo">
                     <div class="pinfoH">
-                        <h2>Bolognese</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
+                        <h2><?=$products[$i]['name']?></h2>
+                        <h4><?=$products[$i]['description']?></h4>
                     </div>
                     <div class="pinfoF">
-                        <p class="priceP">7$</p>
+                        <p class="priceP"><?=$products[$i]['price']?>$</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
             </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/carbonara.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Carbonara</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/cheesepasta.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Cheese</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/meatballs.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Meatballs</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/tomatopasta.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Tomato</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/vegetarianpasta.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Vegetarian</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
+            <?php
+            }
+        }
+        ?>
         </div>
 
-
         <div id="drinksMenu" style="display: none;">
+        <?php
+        for($i = 0;$i<count($products);$i++){
+            if($products[$i]['type'] == 'drink'){?>
             <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/water.png" />
-                </div>
+                    <img class="pimage" src="<?=$products[$i]['image']?>" />
                 <div class="pinfo">
                     <div class="pinfoH">
-                        <h2>Water</h2>
-                        <h4>Uje Rugove</h4>
+                        <h2><?=$products[$i]['name']?></h2>
+                        <h4><?=$products[$i]['description']?></h4>
                     </div>
                     <div class="pinfoF">
-                        <p class="priceP">7$</p>
+                        <p class="priceP"><?=$products[$i]['price']?>$</p>
                         <button>Add to Cart</button>
                     </div>
                 </div>
             </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/sparkling.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Sparkling Water</h2>
-                        <h4></h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/cola.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Coca Cola</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/colazero.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Coca Cola Zero</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/fanta.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Fanta</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/sprite.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Sprite</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/redbull.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Red Bull</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
-            <div class="productContainer">
-                <div class="pimage">
-                    <img src="images/delivery/icetea.png" />
-                </div>
-                <div class="pinfo">
-                    <div class="pinfoH">
-                        <h2>Ice Tea</h2>
-                        <h4>Tomato sauce, peperoni, olive oil, mozzarella, oregano, basil</h4>
-                    </div>
-                    <div class="pinfoF">
-                        <p class="priceP">7$</p>
-                        <button>Add to Cart</button>
-                    </div>
-                </div>
-            </div>
+            <?php
+            }
+        }
+        ?>           
         </div>
 
         <script src="js/JS.js"></script>

@@ -331,13 +331,8 @@ footer {
     display: flex;
     justify-content: center;
     width: 100px;
+    height: 100px;
 }
-
-    .pimage img {
-        max-width: 100px;
-        height: 100px;
-    }
-
 .pinfo {
     display: flex;
     flex-direction: column;
