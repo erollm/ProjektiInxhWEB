@@ -1,8 +1,14 @@
 <?php
 session_start();
 include_once ('classes/productModel.php');
+include_once('classes/cart.php');
 $product = new Product();
 $products = $product->getAllProducts();
+if(isset($_POST['addCart'])){
+    $productId = $_POST['pId'];
+    $cart->add($productId);
+}
+
 ?>
 <html>
 <head>
@@ -41,7 +47,10 @@ $products = $product->getAllProducts();
                     </div>
                     <div class="pinfoF">
                         <p class="priceP"><?=$products[$i]['price']?>$</p>
-                        <button>Add to Cart</button>
+                        <form method="post">
+                        <input type="number" value="<?=$products[$i]['id']?>" name="pId" hidden/>
+                        <button type="submit" name="addCart">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -64,7 +73,10 @@ $products = $product->getAllProducts();
                     </div>
                     <div class="pinfoF">
                         <p class="priceP"><?=$products[$i]['price']?>$</p>
-                        <button>Add to Cart</button>
+                        <form method="post">
+                        <input type="number" value="<?=$products[$i]['id']?>" name="pId" hidden/>
+                        <button type="submit" name="addCart">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -87,7 +99,10 @@ $products = $product->getAllProducts();
                     </div>
                     <div class="pinfoF">
                         <p class="priceP"><?=$products[$i]['price']?>$</p>
-                        <button>Add to Cart</button>
+                        <form method="post">
+                        <input type="number" value="<?=$products[$i]['id']?>" name="pId" hidden/>
+                        <button type="submit" name="addCart">Add to Cart</button>
+                        </form>
                     </div>
                 </div>
             </div>

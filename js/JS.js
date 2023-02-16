@@ -46,3 +46,7 @@ function showMenu() {
         mobileIcon.classList.replace("fa-xmark", "fa-bars");
     }
 }
+
+function redirect(url) {
+    window.location.href = url;
+}

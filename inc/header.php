@@ -1,3 +1,7 @@
+<?php
+include_once ('classes/cart.php');
+$cartCount = $cart->count();
+?>
 <div id="logo">
             <h2>ROSSETI</h2>
 </div>
@@ -18,9 +22,10 @@
                 </li>
                 <?php 
                 if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
-                    echo "<li><a href='admin.php'>ADMIN</a></li>";
+                    echo "<li><a href='admin.php?page=dashboard'>ADMIN</a></li>";
                 }
                 ?>
+                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i>CART(<?=$cartCount?>)</span></a></li>
             </ul>
 </div>
   <div id="mobilebar">

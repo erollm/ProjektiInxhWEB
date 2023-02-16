@@ -16,6 +16,7 @@ class User extends dbCon {
 		$this->password = $pass;
 		$this->role = "user";
 		$this->dbCon=$this->connectDB();
+		$this->dbCon=$this->connectDB();
 	}
 
 	public function getId(){
@@ -61,7 +62,9 @@ class User extends dbCon {
 		$stm = $this->dbCon->prepare($sql);
 		$stm->execute([':user' => $this->username, ':password' =>$this->password]);
 		if($stm->rowCount() > 0){
-			return ['result'=> true, 'role'=> $stm->fetchObject()->role];
+			$result = $stm->fetchObject();
+			$this->id = $result->id;
+			return ['result'=> true, 'role'=> $result->role];
 		}
 		else{
 			return ['result'=> false];

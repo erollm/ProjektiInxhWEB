@@ -93,6 +93,18 @@ class Product extends dbCon{
         }
     }
     
+	public function returnProduct($id){
+		$sql = "SELECT name, price FROM products WHERE id = :id";
+		try{
+		    $stm = $this->dbCon->prepare($sql);
+			$stm->execute([':id' => $id]);
+			$result = $stm->fetch(PDO::FETCH_ASSOC);
+			return $result;
+		}catch(PDOExecption $e){
+			echo $e;
+		}
+	}
+
     public function selectProduct($id){
         $sql = "SELECT * FROM products WHERE id=?";
 		try{

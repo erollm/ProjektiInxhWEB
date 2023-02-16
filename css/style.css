@@ -566,9 +566,153 @@ footer {
 #mobilebar a {
     text-decoration: none;
 }
+#cartbody {
+    width: 60%;
+    font-family: "Source Sans Pro",Calibri,Candara,Arial,sans-serif;
+    margin: 30px auto;
+}
+.cartTable {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+    .cartTable th {
+        font-size: 19px;
+        padding: 5px;
+        border-bottom: 2px solid #ddd;
+    }
+.cartRow {
+    font-size: 17px;
+    border-bottom: 1px solid #ddd;
+}
+    .cartRow:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+    .cartRow td{
+        padding: 10px 5px;
+    }
+    .cartRow:hover {
+        background-color: #ddd;
+    }
+.alignright{
+    text-align: right;
+}
+.alignleft{
+    text-align: left;
+}
+.aligncenter{
+    text-align: center;
+}
+.totalPrice{
+    margin-top: 20px;
+    margin-bottom: 5px;
+    font-weight: 300;
+    text-align: right;
+    font-size: 24px;
+}
+.cartButtons{
+    display:flex;
+    justify-content: space-between;
+}
+.cartButtonsC {
+    width: 60%;
+    display: flex;
+    justify-content: flex-end;
+}
+    #cartButtons button {
+        height: 35px;
+        padding: 0px 10px;
+        border: 0;
+        cursor: pointer;
+        color: white;
+    }
+        #cartButtons button:hover {
+            background-color: #333333;
+        }
+.cartButtonY {
+    background-color: #fac564;
+}
+.cartButtonC {
+    background-color: #696969;
+}
+.cartInput {
+    text-align: center;
+    width: 40px;
+    height: 30px;
+    border: 1px solid #ddd;
+}
+.cartAction{
+    margin-left: 5px;
+    height: 30px;
+    width: 30px;
+    border: 0;
+    cursor:pointer;
+    color: white;
+}
+.cartActionR {
+    background-color: #A52A2A;
+}
+.cartAction:hover {
+    background-color: #333333;
+}
+#checkoutheader {
+    display:flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+#checkoutbody{
+    display: flex;
+
+}
+#checkoutdelivery{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+}
+#checkoutcart{
+    width: 40%;
+}
+.checkoutInput {
+    margin-top: 10px;
+    width: 60%;
+    height: 35px;
+    padding-left: 10px;
+    border: 1px solid #ddd;
+    font-size: 12px;
+}
+.paymentInput{
+    width: 40px;
+    height: 40px;
+}
+#paymentmethod{
+    margin: 25px 0px;
+    display:flex;
+}
+#paymentradios {
+    margin-top: 5px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+#paymentradios label{
+    font-size: 22px;
+    margin-left: 10px;
+}
+    #paymentradios input[type="radio"] {
+        height: 20px;
+        width: 20px;
+        accent-color: black;
+    }
+        .disabledradio {
+            color: #666666;
+        }
+.cashradio{
+    color: forestgreen;
+}
 
 @media screen and (max-width: 481px) {
-#navbar{
+    #navbar{
     display: none;
 }
 #logo{
@@ -667,5 +811,8 @@ footer {
     .reviews{
         margin-top: 10px;
         width: 90%;
+    }
+    #cartbody{
+        width: 95%;
     }
 }

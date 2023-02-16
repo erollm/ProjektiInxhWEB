@@ -1,5 +1,8 @@
 <?php
 session_start();
+if(isset($_SESSION['username']) && isset($_SESSION['role'])){
+    header('Location: index.php');
+}
 include_once ('classes/userModel.php');
 if (isset($_POST['loginS'])){
     $username = $_POST['username'];
@@ -9,12 +12,12 @@ if (isset($_POST['loginS'])){
     $user->setUsername($username);
     $user->setPassword($password);
     if($user->validLogin()['result']){
-       $_SESSION['username'] = $_POST['username'];  
+       $id = $user->getId();
+       $_SESSION['username'] = $id;  
        $_SESSION['role'] = $user->validLogin()['role']; 
+       header('Location: order.php');
     }
 }
-echo $_SESSION['username'];
-
 ?>
 
 <html>

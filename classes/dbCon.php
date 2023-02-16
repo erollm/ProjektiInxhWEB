@@ -2,7 +2,7 @@
 class dbCon{
 private $con = null;
 private $servername = "localhost";
-private $db = "pizzeria";
+private $db = "pizza";
 private $username = "root";
 private $password = "";
 

@@ -4,9 +4,13 @@ if(isset($_SESSION['username']) && $_SESSION['role'] == "admin"){
     include_once ('classes/userModel.php');
     include_once ('classes/messageModel.php');
     include_once ('classes/productModel.php');
+    include_once ('classes/orderModel.php');
+    include_once ('classes/orderProducts.php');
     $user = new User();
     $message = new Message();
     $product = new Product();
+    $order = new Order();
+    $orderDetails = new OrderProducts();
 ?>
 
 <html>

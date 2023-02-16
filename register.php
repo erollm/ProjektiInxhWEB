@@ -1,7 +1,8 @@
 <?php
 session_start();
-?>
-<?php
+if(isset($_SESSION['username']) && isset($_SESSION['role'])){
+    header('Location: index.php');
+}
 include_once ('classes/userModel.php');
 $existsError = "";
 if(isset($_POST['registerS'])){
@@ -19,7 +20,7 @@ if(isset($_POST['registerS'])){
     else{
         $newUser->addUser();
         $existsError = "Registration completed successfully";
-        header('Refresh:2; url=index.php');
+        header('Refresh:2; url=login.php');
     }
 }
 ?>
