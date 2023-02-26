@@ -28,9 +28,6 @@ $cartCount = $cart->count();
                 <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i>CART(<?=$cartCount?>)</a></li>
             </ul>
 </div>
-  <div id="mobilecart">
-   
-  </div>
   <div id="mobilebar">
             <a href="cart.php"><i id="mobilecart" class="fa-solid fa-cart-shopping">(<?=$cartCount?>)</i></a>
             <a href="javascript:void(0);" onclick="showMenu()">
