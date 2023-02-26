@@ -4,6 +4,7 @@ if(isset($_SESSION['username']) && isset($_SESSION['role'])){
     header('Location: index.php');
 }
 include_once ('classes/userModel.php');
+$errormessage = "";
 if (isset($_POST['loginS'])){
     $username = $_POST['username'];
     $password = $_POST['password'];
@@ -16,6 +17,9 @@ if (isset($_POST['loginS'])){
        $_SESSION['username'] = $id;  
        $_SESSION['role'] = $user->validLogin()['role']; 
        header('Location: order.php');
+    }
+    else{
+        $errormessage = "Invalid username or password";
     }
 }
 ?>
@@ -40,7 +44,7 @@ if (isset($_POST['loginS'])){
             <div id="loginheader">
                 <h1>Log In</h1>
                 <p>Login or create a new account</p>
-                <h4 id="errormesage"></h4>
+                <h4 id="errormesage"><?=$errormessage?></h4>
             </div>
             <form method="POST" id="loginInput">
                     <div class="loginInput">

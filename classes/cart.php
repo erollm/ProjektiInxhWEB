@@ -71,11 +71,5 @@ class Cart {
 
 $cart = new Cart();
 
-// Example usage
-//$cart = new Cart();
-//$cart->add('iphone');
-
-//print_r($cart->getCart());
-//echo "</br>".$cart->count();
 
 ?>

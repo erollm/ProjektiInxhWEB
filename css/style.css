@@ -662,7 +662,6 @@ footer {
 }
 #checkoutbody{
     display: flex;
-
 }
 #checkoutdelivery{
     margin-top: 15px;
@@ -709,6 +708,11 @@ footer {
         }
 .cashradio{
     color: forestgreen;
+}
+
+#mobilecart {
+    color: darkred;
+    margin-right: 5px;
 }
 
 @media screen and (max-width: 481px) {
@@ -815,4 +819,17 @@ footer {
     #cartbody{
         width: 95%;
     }
+    #checkoutbody {
+        flex-direction: column;;
+    }
+    #checkoutdelivery {
+        width: 100%;
+    }
+    #checkoutcart{
+        width:100%;
+    }
+    .checkoutInput{
+        width: 100%;
+    }
+
 }

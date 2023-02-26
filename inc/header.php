@@ -25,13 +25,17 @@ $cartCount = $cart->count();
                     echo "<li><a href='admin.php?page=dashboard'>ADMIN</a></li>";
                 }
                 ?>
-                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i>CART(<?=$cartCount?>)</span></a></li>
+                <li><a href="cart.php"><i class="fa-solid fa-cart-shopping"></i>CART(<?=$cartCount?>)</a></li>
             </ul>
 </div>
+  <div id="mobilecart">
+   
+  </div>
   <div id="mobilebar">
+            <a href="cart.php"><i id="mobilecart" class="fa-solid fa-cart-shopping">(<?=$cartCount?>)</i></a>
             <a href="javascript:void(0);" onclick="showMenu()">
                 <div id="showMenu">
-                    <i id="mobileicon" class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-bars"></i>
                 </div>
             </a>
   </div>
@@ -50,6 +54,9 @@ $cartCount = $cart->count();
                 }
                 else{
                 echo "<a class='mAnchor' href='login.php'><li class='mobileli'>LOG IN</li></a>";
+                }
+                if(isset($_SESSION['role']) && $_SESSION['role'] == 'admin'){
+                    echo "<a class='mAnchor' href='admin.php?page=dashboard'><li><li class='mobileli'>ADMIN PANEL</li></a>";
                 }
                 ?>
     </ul>
